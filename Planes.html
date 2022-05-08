@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<style type="text/css">
+        
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: white;
+            font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+            background-image: url("fondoPlanes2.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        h1{
+            text-align: center;
+            padding-top: 2.5%;
+            color: wheat;
+        }
+
+        p{
+            padding-top: 1.7%;
+            font-size: 18px;
+            font-weight: bolder;
+            text-align: center;
+            color: wheat;
+        }
+
+        div.pEstandar{
+            position: relative;
+            width: 15%;
+            margin: auto;
+        }
+
+        img.imgEstandar{
+            display: block;
+            width: 100%;
+        }
+
+        div.contenedorAll{
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden;
+            height: 100%;
+            width: 90%;
+            margin-top: 3%;
+        }
+
+        div.pEstandarOverlay{
+            border-radius: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+            font-family: 'Quicksand', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.65s; 
+        }
+
+        div.pEstandarOverlay > * {
+            transform: translateY(20px);
+            transition: transform 0.25s;
+        }
+
+        div.pEstandarOverlay:hover {
+            opacity: 1;
+        }
+
+        div.pEstandarOverlay > * {
+            transform: translateY(0);
+        }
+
+        div.tituloPEstandar{
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 8%;
+        }
+
+        div.contenedorDetalles{
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%;
+            width: 90%;
+            margin-top: 3%;
+        }
+
+        div.detalles{
+            color: wheat;
+            font-weight: bold;
+            border: 2px solid  #58412b ;
+            background-color: #85705a;
+            width: 30%;
+            margin: auto;
+            padding: 1% 1% 1%;
+        }
+
+        div.detalles ul li{
+            list-style: none;
+            
+        }
+
+        hr{
+            width: 100%;
+            margin-top: 1.5%;
+            height: 4px;
+            border: 2px solid wheat;
+            background-color: wheat;
+
+        }
+
+        #desplegable {
+            position: fixed;
+            width: 13%;
+            height: 100%;
+            background: white;
+            left: -200px;
+            transition: all 400ms linear;
+            border: none;
+        }
+
+        #desplegable.active {
+            left: 0px;
+        }
+
+        #desplegable ul li {
+            color: rgba(0, 0, 0, 0.9);
+            list-style: none;
+            padding: 15px 10px;
+            border-bottom: 1px solid rgba(74, 73, 73, 0.3);
+            text-align: center;
+        }
+
+        #desplegable ul li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .logo {
+            border-radius: 50%;
+            display: block;
+            width: 40%;
+            height: 80px;
+            margin: 0 auto; 
+        }
+
+        #desplegable .boton {
+            position: absolute;
+            left: 230px;
+            top: 20px;
+            cursor: pointer; /*Cambia al cursor de click al posicionarse sobre el boton*/
+            background: none;
+            border: none;
+        }
+
+        #desplegable .boton span {
+            display: block;
+            width: 40px;
+            text-align: center;
+            font-size: 30px;
+            border: 3px solid wheat;
+            color: wheat;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="desplegable">
+        <div class="boton">
+          <span>&#9776</span> <!--Codigo hexadecimal que le da la forma al boton con tres rallas horizonatales.  Fuente: W3Schools-->
+        </div>
+        <ul>
+            <li><img src="logo.png" class="logo"></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Planes.html">Planes</a></li>
+            <li><a href="sobreNosotros.html">Sobre nosotros</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+        </ul>
+    </div>
+
+    <header>
+        <h1>PLANES</h1>
+        <nav>
+            <p>Disponemos de varios packs personalizados que se ajustan según las necesidades del consumidor: </p>
+        </nav>
+    </header>
+    <main>
+        <div class="contenedorAll">
+            <div class="pEstandar">
+                <img class="imgEstandar" src="pEstandar.png">
+                <div class="pEstandarOverlay">
+                    <div class="tituloPEstandar">Plan Estandar</div>
+                    <p class="desc">25,50$/mes</p>
+                </div>
+            </div>
+            <div class="pEstandar">
+                <img class="imgEstandar" src="pPremium.png">
+                <div class="pEstandarOverlay">
+                    <div class="tituloPEstandar">Plan Premium</div>
+                    <p class="desc">39,99$/mes</p>
+                </div>
+            </div>
+            <div class="pEstandar">
+                <img class="imgEstandar" src="pDeluxe.png">
+                <div class="pEstandarOverlay">
+                    <div class="tituloPEstandar">Plan Deluxe</div>
+                    <p class="desc">59,99$/mes</p>
+                </div>
+            </div>
+        </div>
+        <div class="contenedorDetalles">
+            <div class="detalles">
+                <ul>
+                    <li>- 1 revisión mensual gratuita</li>
+                    <br>
+                    <li>- Planes dietéticos variados</li>
+                    <br>
+                    <li>- Entrenador personal (1h/Semana)</li>
+                    <br>
+                    <li> &nbsp</li>
+                </ul>
+            </div>
+            <div class="detalles">
+                <ul>
+                    <li>- 2 revisiones semanales gratuitas</li>
+                    <br>
+                    <li>- Planes dietéticos adaptados</li>
+                    <br>
+                    <li>- Entrenador Personal (2h/Semana)</li>
+                    <br>
+                    <li>&nbsp</li>
+                </ul>
+            </div>
+            <div class="detalles">
+                <ul>
+                    <li>- Revisiones semanales gratuitas sin límites</li>
+                    <br>
+                    <li>- Planes dietéticos adaptados</li>
+                    <br>
+                    <li>- Entrenador Personal (4h/Semana)</li>
+                    <br>
+                    <li>- Atención Personalizada las 24 horas </li>
+                </ul>
+            </div>
+            <hr>
+        </div>
+    </main>
+
+    <script>
+        const btnToggle = document.querySelector('.boton');
+    
+        btnToggle.addEventListener('click', function () {
+    
+            console.log('click')
+            document.getElementById('desplegable').classList.toggle('active');
+            console.log(document.getElementById('desplegable'))
+    
+        });
+    </script>
+</body>
+</html>

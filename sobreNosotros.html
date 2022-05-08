@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: white;
+            font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+            background-image: url("slashes.png");
+        }
+
+        header h1{
+            color: whitesmoke;
+            text-align: center;
+            padding-top: 2.5%;
+            padding-bottom: 2%;
+        }
+
+        div h1{
+            color: whitesmoke;
+            text-align: center;
+            padding-top: 1%;
+        }
+
+        div {
+            background-color:   #4c1010;
+            border: 4px solid  #2c0c0c;
+            width: 80%;
+            height: 530px;
+            margin: auto;
+            margin-bottom: 1%;
+        }
+
+        div p{
+            text-align: justify;
+            color: whitesmoke;
+            padding: 1% 5% 1% 5%;
+            
+        }
+        div.contenedor {
+            display: flex;
+            border: none;
+            height: 100px;
+            
+        }
+
+        div.contenido{
+            width: 30%;
+            height: 250px;
+            margin-top: 2%;
+            margin-left: 1.7%;
+            display: inline-block;
+        }
+
+        div.contenido h1{
+            text-align: center;
+            padding-top: 2%;
+            font-size: 140%;
+        }
+
+        div iframe{
+            width: 70%;
+            height: 350px;
+            padding-left: 14%;
+            padding-top: 2%;
+        }
+
+        div.contenido img{
+            width: 65%;
+            padding-left: 18%;
+            padding-top: 3.5%;
+        }
+
+        #desplegable {
+            position: fixed;
+            width: 13%;
+            height: 100%;
+            background: white;
+            left: -200px;
+            transition: all 400ms linear;
+            border: none;
+        }
+
+        #desplegable.active {
+            left: 0px;
+        }
+
+        #desplegable ul li {
+            color: rgba(0, 0, 0, 0.9);
+            list-style: none;
+            padding: 15px 10px;
+            border-bottom: 1px solid rgba(74, 73, 73, 0.3);
+            text-align: center;
+        }
+
+        #desplegable ul li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .logo {
+            border-radius: 50%;
+            display: block;
+            width: 40%;
+            height: 80px;
+            margin: 0 auto; 
+        }
+
+        #desplegable .boton {
+            position: absolute;
+            left: 230px;
+            top: 20px;
+            cursor: pointer; /*Cambia al cursor de click al posicionarse sobre el boton*/
+            background: none;
+            border: none;
+        }
+
+        #desplegable .boton span {
+            display: block;
+            width: 40px;
+            text-align: center;
+            font-size: 30px;
+            border: 3px solid white;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="desplegable">
+        <div class="boton">
+          <span>&#9776</span> <!--Codigo hexadecimal que le da la forma al boton con tres rallas horizonatales.  Fuente: W3Schools-->
+        </div>
+        <ul>
+            <li><img src="logo.png" class="logo"></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Planes.html">Planes</a></li>
+            <li><a href="sobreNosotros.html">Sobre nosotros</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+        </ul>
+    </div>
+
+    <header>
+        <h1>SOBRE NOSOTROS</h1>
+    </header>
+    <main>
+        <div>
+            <h1>¿Quiénes somos?</h1>
+            <p> Nutribad nace hace más de 10 años ofreciendo, el servicio de asesoramiento 
+                nutricional Farmacias y centros El Corte Inglés, la base sobre la que creamos
+                toda nuestra estructura. La evolución de la compañía nos ha convertido en 
+                referente en el sector del control de peso y ha creado, gracias a esto, nuestros
+                novedosos servicios y planes, con tratamientos para el mantenimiento y control 
+                de peso, además de entrenador personal. En el año 2016 dimos un paso más y nos expandimos 
+                convirtiéndonos en fabricantes de complementos nutricionales
+            </p>
+            <div class="contenedor">
+                <div class="contenido">
+                    <h1>Asesoramiento nutricional</h1>
+                    <img src="piramide.png">
+                </div>
+                <div class="contenido">
+                    <h1>Planes personalizados</h1>
+                    <img src="portapapeles.png">
+                    
+                </div>
+                <div class="contenido">
+                    <h1>Entrenador personal</h1>
+                    <img src="personal.png">
+                </div>
+            </div>
+        </div>
+        <div>
+            <h1>¿Dónde nos encontramos?</h1>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1553.0327751917598!2d-6.974346150951267!3d38.87674206628975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd16e430974f4cd5%3A0xfc6cdc129a837641!2sC.%20Menacho%2C%2021%2C%2006001%20Badajoz!5e0!3m2!1ses!2ses!4v1648799197937!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </main>
+
+    <script>
+        const btnToggle = document.querySelector('.boton');
+    
+        btnToggle.addEventListener('click', function () {
+    
+            console.log('click')
+            document.getElementById('desplegable').classList.toggle('active');
+            console.log(document.getElementById('desplegable'))
+    
+        });
+        </script>
+</body>
+</html>

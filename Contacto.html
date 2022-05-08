@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<style type="text/css">
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: white;
+            font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+            background-image: url("contacto.jpg");
+            background-size: 40%;
+            
+        }
+
+        .header{
+            height: 80px;
+        }
+
+        h1, h2{
+            color:  #2e271f ;
+            text-align: center;
+            padding-top: 2%;
+        }
+
+        .contenedor{
+            width: 50%;
+            height: 250px;
+            border: 2px solid  #2e271f;
+            background-color: #736d62;
+            margin: auto;
+            margin-top: 2%;
+            margin-bottom: 2%;
+            text-align: justify;
+        }
+
+        .contenido{
+            display: flex;
+            height: 170px;
+            width: 90%;
+            margin: auto;
+            margin-top: 2%;
+            margin-left: 14%;
+        }
+
+        .contenido img{
+            width: 30%;
+            height: 140px;
+            padding-right: 6%;
+        }
+
+        #desplegable {
+            position: fixed;
+            width: 13%;
+            height: 100%;
+            background: white;
+            left: -200px;
+            transition: all 400ms linear;
+        }
+
+        #desplegable.active {
+            left: 0px;
+        }
+
+        #desplegable ul li {
+            color: rgba(0, 0, 0, 0.9);
+            list-style: none;
+            padding: 15px 10px;
+            border-bottom: 1px solid rgba(74, 73, 73, 0.3);
+            text-align: center;
+        }
+
+        #desplegable ul li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .logo {
+            border-radius: 50%;
+            display: block;
+            width: 40%;
+            height: 80px;
+            margin: 0 auto; 
+        }
+
+        #desplegable .boton {
+            position: absolute;
+            left: 230px;
+            top: 20px;
+            cursor: pointer; /*Cambia al cursor de click al posicionarse sobre el boton*/
+        }
+
+        #desplegable .boton span {
+            display: block;
+            width: 40px;
+            text-align: center;
+            font-size: 30px;
+            border: 3px solid black;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="desplegable">
+        <div class="boton">
+          <span>&#9776</span> <!--Codigo hexadecimal que le da la forma al boton con tres rallas horizonatales.  Fuente: W3Schools-->
+        </div>
+        <ul>
+            <li><img src="logo.png" class="logo"></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Planes.html">Planes</a></li>
+            <li><a href="sobreNosotros.html">Sobre nosotros</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+        </ul>
+    </div>
+    <header>
+        <div class="header">
+            <h1>CONTACTO</h1>
+        </div>
+    </header>
+    <main>
+        <div class="contenedor">
+            <h2>Dietista</h2>
+            <div class="contenido">
+                <img src="fotoPerfil.png">
+                <p>
+                    - Nombre: Jose Ángel Gutierrez<br><br>-Teléfono de contacto: 661666661<br><br>- Instagram: @jangel.nutribad<br><br>- Facebook: JÁngel Nutribad
+                </p>
+            </div>
+        </div>
+        <div class="contenedor">
+            <h2>Entrenador personal</h2>
+            <div class="contenido">
+                <img src="fotoPerfil.png">
+                <p>
+                    - Nombre: Maria Teresa Mogollón<br><br>-Teléfono de contacto: 653454210<br><br>- Instagram: @mteresa.nutribad<br><br>- Facebook: MTeresa Nutribad
+                </p>
+            </div>
+        </div>
+        <div class="contenedor">
+            <h2>Atención al cliente</h2>
+            <div class="contenido">
+                <img src="fotoPerfil.png">
+                <p>
+                    - Nombre: Juan Carlos Rodríguez<br><br>-Teléfono de contacto: 633052491<br><br>- Instagram: @jcarlos.nutribad<br><br>- Facebook: JCarlos Nutribad
+                </p>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        const btnToggle = document.querySelector('.boton');
+    
+        btnToggle.addEventListener('click', function () {
+    
+            console.log('click')
+            document.getElementById('desplegable').classList.toggle('active');
+            console.log(document.getElementById('desplegable'))
+    
+        });
+        </script>
+</body>
+</html>
